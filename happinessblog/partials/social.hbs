@@ -1,0 +1,29 @@
+<div class="dd_post_share">
+    <div class="dd_buttons">
+        <div class="dd_button">
+            <a href="https://twitter.com/share" class="twitter-share-button" data-text="{{title}}" data-url="http://blog.bufferapp.com/{{slug}}" data-via="buffer" data-related="buffer" data-count="vertical">Tweet</a>
+        </div>
+        <div class="dd_button">
+            <a href="http://bufferapp.com/add"  class="buffer-add-button" data-count="vertical" data-text="{{title}}" data-url="http://blog.bufferapp.com/{{slug}}" data-via="buffer"></a>
+        </div>
+        <div class="dd_button">
+            <div class="fb-like" data-href="http://blog.bufferapp.com/{{slug}}" data-width="55" data-layout="box_count" data-show-faces="false" data-send="false"></div>
+        </div>
+        {{!--
+        Not active on current site but may be wanted
+        <div class="dd_button">
+            <a class="fb-share-button" type="box_count" share_url="http://blog.bufferapp.com/{{slug}}"></a>
+        </div>
+        --}}
+        <div class="dd_button">
+            <g:plusone size="tall" href="http://blog.bufferapp.com/{{slug}}"></g:plusone>
+        </div>
+        <div class="dd_button">
+            <script type="IN/share" data-url="http://blog.bufferapp.com/{{slug}}" data-counter="top"></script>
+        </div>
+        <div class="dd_button">
+            <a data-pocket-label="pocket" data-pocket-count="vertical" data-save-url="http://blog.bufferapp.com/{{slug}}" class="pocket-btn" data-lang="en"></a>
+        </div>
+    </div>
+    <div style="clear:both"></div>
+</div>

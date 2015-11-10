@@ -1,0 +1,38 @@
+{{!< default}}
+
+{{#contentFor ""}}
+    home blog custom-background group-blog
+{{/contentFor}}
+
+{{! The comment above "< default" means - insert everything in this file into
+the {body} of the default.hbs template, which contains our header/footer. }}
+
+<header class="page-header">
+    <h1 class="page-title">
+        <span class="subdued">Results for Tag:</span> {{tag.name}}				</h1>
+</header>
+<div id="primary" class="content-area">
+    <main id="main" class="site-main" role="main">
+
+
+        {{! Each post will be output using this markup }}
+        {{#foreach posts}}
+
+            <article class="post type-post status-publish format-standard has-post-thumbnail hentry category-social-media-tips">
+
+                {{> "loop"}}
+
+                <div class="entry-content">
+                    <p>{{excerpt}}</p>
+                    <p><a class="continue-reading" href="{{url}}">Continue Reading →</a></p>
+                </div>
+            </article>
+
+        {{/foreach}}
+
+        {{!! After all the posts, we have the previous/next pagination links }}
+        {{pagination}}
+
+
+    </main>
+</div>

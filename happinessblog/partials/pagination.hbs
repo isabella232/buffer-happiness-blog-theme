@@ -1,0 +1,10 @@
+<nav class="navigation paging-navigation" role="navigation">
+    <div class="nav-links">
+        {{#if prev}}
+            <div class="nav-next"><a href="{{page_url prev}}">Newer →<span class="meta-nav"></span></a></div>
+        {{/if}}
+        {{#if next}}
+            <div class="nav-previous"><a class="newer-previous" href="{{page_url next}}"><span class="meta-nav"></span>← Older</a></div>
+        {{/if}}
+    </div>
+</nav>

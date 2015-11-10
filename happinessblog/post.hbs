@@ -1,0 +1,90 @@
+{{!< default}}
+{{#contentFor "classes"}}
+single single-post single-format-standard group-blog
+{{/contentFor}}
+
+{{! The comment above "< default" means - insert everything in this file into
+    the {body} of the default.hbs template, which contains our header/footer. }}
+<div id="primary content" class="site-content">
+
+    <main id="content" role="main">
+        <div id="primary" class="content-area">
+            <article class="post type-post status-publish format-standard has-post-thumbnail hentry category-social-media-tips">
+                {{#post}}
+
+                    <header class="entry-header">
+                        <a href="{{url}}">
+                            <div class="entry-title-wrap">
+                                <h1 class="entry-title">{{title}}</h1>
+                            </div>
+                            <div class="featured-image" style="background-image: url({{#if image}}{{image}}{{else}}{{asset "/images/article-header-default.png"}}{{/if}})">
+                                <span class="gradient-overlay"></span>
+                            </div>
+                        </a>
+                    </header>
+                    {{#author}}
+                    <div class="entry-meta">
+                        <a href="{{url}}">
+                            <span class="author-avatar byline">
+                            {{#if image}}<img alt='' src="{{image}}" class="avatar avatar-96 photo" height="96" width="96" />{{/if}}By {{name}}
+                            </span>
+                        </a>
+                        <span class="timestamp">{{date published_at format="MMMM Do, YYYY"}}</span>
+                        <a class="comments-anchor" href="{{url}}#disqus_thread">
+                            <span class="dsq-postid" rel="">Comments</span>
+                        </a>
+
+                    {{/author}}
+                </div>
+
+                <div class="entry-content">
+                    <a id="dd_start"></a>
+                    {{content}}
+                    {{> "social"}}
+                    {{> "social-scrollbar"}}
+                </div>
+
+                {{#if tags}}<div class="tags-list" rel="tag">{{#foreach tags}}<a href="{{url}}" rel="tag">{{name}}</a>{{/foreach}}</div>{{/if}}
+
+                    <footer class="entry-footer" style="min-height: 150px">
+                        {{#author}}
+                            {{#if image}}<div class="author-bio-avatar"><a href="{{url}}"><img alt="" src="{{image}}" class="avatar avatar-96 photo" height="96" width="96"></a></div>{{/if}}
+                            <p class="footer-byline">Written by <a href="{{website}}">{{name}}</a></p>
+                            <p class="footer-author-bio">{{{bio}}}</p>
+                            {{#if location}}
+                            <div class="twitter-badge">  <a href="https://twitter.com/{{location}}" class="twitter-follow-button" data-show-count="true" data-lang="en">Follow @{{location}}</a></div>
+                            {{/if}}
+                        {{/author}}
+
+                    </footer>
+
+                <div id="disqus_thread"></div>
+
+                <script type="text/javascript">
+                    var disqus_shortname = 'bufferapp';
+                    (function() {
+                        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                    })();
+                </script>
+                <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+                <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+               
+            </article>
+            <nav class="navigation post-navigation" role="navigation">
+		<div class="nav-links">
+            {{#prev_post}}
+			<div class="nav-previous"><a href="/{{slug}}" rel="prev"><span class="meta-nav"></span>← Previous</a></div>
+            {{/prev_post}}
+            {{#next_post}}
+            <div class="nav-next"><a href="/{{slug}}" rel="next">Next →<span class="meta-nav"></span></a></div>		
+            </div><!-- .nav-links -->
+            {{/next_post}}
+                 {{/post}}
+	</nav>
+        </div>
+    </main>
+
+</div>

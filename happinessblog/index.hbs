@@ -1,0 +1,59 @@
+{{!< default}}
+
+{{#contentFor "classes"}}
+home blog custom-background group-blog
+{{/contentFor}}
+
+{{! The comment above "< default" means - insert everything in this file into
+the {body} of the default.hbs template, which contains our header/footer. }}
+
+
+<div class="newsletter-cta-large">
+    <h1 class="newsletter-cta-large-h1">Awesome, actionable social media advice. Delivered daily.</h1>
+    <h2 class="newsletter-cta-large-h2">Join 31,012 good-looking folks who get our latest content first :)</h2>
+
+    <div class="newsletter-cta-large-list-wrap">
+        <h5>Here is what you can expect from us:</h5>
+        <ul class="newsletter-cta-large-list">
+            <li>The latest data and studies on social media best practices to get ahead of the game</li>
+            <li>In-depth how-to guides on what works best when posting on Twitter, Facebook, LinkedIn and more</li>
+            <li>Unique insights into our own experiments for growing our audience on social media</li>
+        </ul>
+    </div>
+
+    <form id="mc-embedded-subscribe-form" class="newsletter-cta-large-form validate" action="http://bufferapp.us7.list-manage.com/subscribe/post?u=8109206415f7c9e3b2ddc83ad&amp;id=603a8a5c03" method="post" name="mc-embedded-subscribe-form" target="_blank" novalidate>
+        <div style="display: none;">
+            <div class="response" id="mce-error-response" style="display:none"></div>
+            <div class="response" id="mce-success-response" style="display:none"></div>
+        </div>
+        <input id="mce-EMAIL" class="newsletter-cta-large-input required email" type="email" value="" name="EMAIL" placeholder="Email Address" />
+        <input id="MMERGE3" name="MMERGE3" type="hidden" value="blog-newsletter-cta" />
+        <button id="emailsubscribe" class="newsletter-cta-large-button" alt="Subscribe" name="Subscribe" type="submit"></button>
+        <div class="newsletter-cta-large-caption">And don’t worry, we hate spam too! You can unsubscribe at anytime.</div>
+    </form>
+</div>
+<div id="primary" class="content-area">
+    <main id="main" class="site-main" role="main">
+
+
+        {{! Each post will be output using this markup }}
+        {{#foreach posts}}
+
+            <article class="post type-post status-publish format-standard has-post-thumbnail hentry category-social-media-tips">
+
+                {{> "loop"}}
+
+                <div class="entry-content">
+                    <p>{{excerpt}}</p>
+                    <p><a class="continue-reading" href="{{url}}">Continue Reading →</a></p>
+                </div>
+            </article>
+
+        {{/foreach}}
+
+{{!! After all the posts, we have the previous/next pagination links }}
+{{pagination}}
+
+
+    </main>
+</div>

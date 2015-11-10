@@ -1,0 +1,24 @@
+<header class="entry-header">
+    <a href="{{url}}">
+    <div class="entry-title-wrap">
+        <h1 class="entry-title">{{title}}</h1>
+    </div>
+    <div class="featured-image" style="background-image: url({{#if image}}{{image}}{{else}}{{asset "/images/article-header-default.png"}}{{/if}})">
+        <span class="gradient-overlay"></span>
+    </div>
+</a>
+</header>
+    {{#author}}
+    <div class="entry-meta">
+        <a href="{{url}}">
+            <span class="author-avatar byline">
+                {{#if image}}<img alt='' src="{{image}}" class="avatar avatar-96 photo" height="96" width="96" />{{/if}}By {{name}}
+            </span>
+        </a>
+        <span class="timestamp{{#if image}}-author-image{{/if}}">{{date published_at format="MMMM Do, YYYY"}}</span>
+    {{/author}}
+        <div class="share-buttons">
+            <a href="https://twitter.com/share" class="twitter-share-button" data-count="horizontal" data-text="" data-via="buffer" data-url="http://blog.bufferapp.com/{{slug}}" data-counturl="http://blog.bufferapp.com/{{slug}}">Tweet</a>
+            <a href="http://bufferapp.com/add" class="buffer-add-button" data-count="horizontal" data-text="" data-via="buffer" data-url="http://blog.bufferapp.com/{{slug}}">Buffer</a>
+        </div>
+    </div>
